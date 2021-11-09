@@ -4,7 +4,7 @@ from DeviceControllerTelegramBot import bot
 api_key = "telegram_api_key"
 admin_chat_ids_list = [
     # admin chat id,
-    # integers
+    # in integers
 ]
 
 # Serial communication configuration with Arduino board
