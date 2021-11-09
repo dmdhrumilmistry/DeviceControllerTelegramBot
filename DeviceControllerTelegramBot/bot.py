@@ -19,6 +19,12 @@ class ControllerBot:
             user_details = self.__get_user_details(message)
             self.bot.reply_to(message=message, text=user_details)
 
+        
+        @self.bot.message_handler(commands=['help'])
+        def _help_message(message:tele_message):
+            if self.__validate_request(message):
+                self.bot.reply_to(message=message, text='\r\nDevice Controller Telegram Bot\r\nWritten by Dhrumil Mistry\r\nGithub Profile : \r\nhttps://github.com/dmdhrumilmistry\r\n---------------------------------------\r\ncommand : description\r\n---------------------------------------\r\n/start : get chat id and user details\r\n/help : get help menu\r\n/devices : get devices control options\r\n')
+
      
         @self.bot.message_handler(commands=['devices'])
         def _handle_devices(message: tele_message):
@@ -34,7 +40,7 @@ class ControllerBot:
                     )
                     self.bot.reply_to(
                         message, f'Choose {device} State:', reply_markup=keyboard)
-
+        
 
         @self.bot.callback_query_handler(func=lambda call: True)
         def _callback_handler(query):
