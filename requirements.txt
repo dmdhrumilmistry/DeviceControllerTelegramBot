@@ -1,1 +1,2 @@
 pyTelegramBotAPI>=4.2.0
+pySerial>=3.5
